@@ -95,7 +95,7 @@ const TESTIMONIALS = [
 ];
 
 const CONTACT_INFO = [
-  { Icon: Phone, label: "24/7 Helpline", value: "+91 99999 99999 / +91 98888 88888" },
+  { Icon: Phone, label: "24/7 Helpline", value: "+918796762902" },
   { Icon: MapPin, label: "Service Area", value: "Delhi, Noida, Greater Noida, Ghaziabad & NCR" },
   { Icon: Clock, label: "Availability", value: "24 Hours × 7 Days × 365 Days" },
   { Icon: Mail, label: "Email", value: "info@mangalservices.com" },
@@ -209,7 +209,7 @@ export default function MangalService() {
                 {l.label}
               </a>
             ))}
-            <a href="tel:+919999999999" className="btn-accent font-display font-bold px-5 py-2.5 text-sm tracking-wider rounded-lg flex items-center gap-2 shadow-md">
+            <a href="tel:+918796762902" className="btn-accent font-display font-bold px-5 py-2.5 text-sm tracking-wider rounded-lg flex items-center gap-2 shadow-md">
               <Phone size={15} />
               Call Now
             </a>
@@ -225,7 +225,7 @@ export default function MangalService() {
                 {l.label}
               </a>
             ))}
-            <a href="tel:+919999999999" className="btn-accent font-display font-bold text-center px-5 py-3 text-sm tracking-wider mt-2 rounded-lg flex items-center justify-center gap-2">
+            <a href="tel:+918796762902" className="btn-accent font-display font-bold text-center px-5 py-3 text-sm tracking-wider mt-2 rounded-lg flex items-center justify-center gap-2">
               <Phone size={16} /> Call Now
             </a>
           </div>
@@ -256,7 +256,7 @@ export default function MangalService() {
             Providing compassionate and complete funeral, ambulance, and last rites services across Delhi NCR. Serving families with dignity and devotion since over 15 years.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+919999999999" className="btn-accent inline-flex items-center justify-center gap-2 font-display font-bold px-8 py-4 text-sm tracking-widest rounded-lg shadow-2xl">
+            <a href="tel:+918796762902" className="btn-accent inline-flex items-center justify-center gap-2 font-display font-bold px-8 py-4 text-sm tracking-widest rounded-lg shadow-2xl">
               <Phone size={18} /> CALL 24/7 HELPLINE
             </a>
             <a href="#services" className="inline-flex items-center justify-center gap-2 font-display font-bold px-8 py-4 text-sm tracking-widest rounded-lg border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-200">
@@ -391,7 +391,7 @@ export default function MangalService() {
                   </div>
                 ))}
               </div>
-              <a href="tel:+919999999999" className="btn-primary inline-flex items-center gap-2 font-display font-bold px-8 py-4 text-sm tracking-widest rounded-lg shadow-lg">
+              <a href="tel:+918796762902" className="btn-primary inline-flex items-center gap-2 font-display font-bold px-8 py-4 text-sm tracking-widest rounded-lg shadow-lg">
                 <Phone size={16} /> CONTACT US NOW
               </a>
             </AnimatedSection>
@@ -476,36 +476,62 @@ export default function MangalService() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <AnimatedSection>
-            <p className="text-accent font-display text-xs tracking-[0.4em] uppercase mb-3 flex items-center justify-center gap-2">
-              <Star size={13} /> Families We Served
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary mb-4">Their Words, Our Pride</h2>
-            <div className="divider mb-12"></div>
-          </AnimatedSection>
-          <div className="relative min-h-52 bg-blue-50 rounded-2xl border border-blue-100 p-8 shadow-sm">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className={`transition-all duration-700 absolute inset-0 flex flex-col items-center justify-center px-8 py-8 ${i === activeTestimonial ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}>
-                <div className="flex gap-1 mb-4">
-                  {Array(t.rating).fill(0).map((_, j) => <Star key={j} size={18} fill="#be252c" className="text-accent" />)}
-                </div>
-                <p className="text-stone-600 text-lg sm:text-xl italic leading-relaxed mb-6 max-w-2xl">"{t.text}"</p>
-                <div className="font-display text-primary font-bold">{t.name}</div>
-                <div className="flex items-center gap-1 text-stone-400 text-sm mt-1">
-                  <MapPin size={12} /> {t.location}
-                </div>
+   {/* ── TESTIMONIALS ── */}
+<section className="py-20 bg-white overflow-hidden">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <AnimatedSection>
+      <p className="text-accent font-display text-xs tracking-[0.4em] uppercase mb-3 flex items-center justify-center gap-2">
+        <Star size={13} /> Families We Served
+      </p>
+      <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary mb-4">Their Words, Our Pride</h2>
+      <div className="divider mb-12"></div>
+    </AnimatedSection>
+
+    {/* Slider wrapper */}
+    <div className="overflow-hidden">
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
+      >
+        {TESTIMONIALS.map((t, i) => (
+          <div
+            key={i}
+            className="w-full shrink-0 px-2"
+          >
+            <div className="bg-blue-50 rounded-2xl border border-blue-100 p-6 sm:p-8 shadow-sm flex flex-col items-center">
+              <div className="flex gap-1 mb-4">
+                {Array(t.rating).fill(0).map((_, j) => (
+                  <Star key={j} size={18} fill="#be252c" className="text-accent" />
+                ))}
               </div>
-            ))}
+              <p className="text-stone-600 text-base sm:text-xl italic leading-relaxed mb-6 max-w-2xl">
+                "{t.text}"
+              </p>
+              <div className="font-display text-primary font-bold">{t.name}</div>
+              <div className="flex items-center gap-1 text-stone-400 text-sm mt-1">
+                <MapPin size={12} /> {t.location}
+              </div>
+            </div>
           </div>
-          <div className="flex justify-center gap-2 mt-6">
-            {TESTIMONIALS.map((_, i) => (
-              <button key={i} onClick={() => setActiveTestimonial(i)} className={`h-2 rounded-full transition-all ${i === activeTestimonial ? "w-8" : "w-2 bg-blue-200"}`} style={i === activeTestimonial ? { background: "#0e3271" } : {}} />
-            ))}
-          </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+
+    {/* Dots */}
+    <div className="flex justify-center gap-2 mt-6">
+      {TESTIMONIALS.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => setActiveTestimonial(i)}
+          className={`h-2 rounded-full transition-all ${
+            i === activeTestimonial ? "w-8" : "w-2 bg-blue-200"
+          }`}
+          style={i === activeTestimonial ? { background: "#0e3271" } : {}}
+        />
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ── CTA BANNER ── */}
       <section className="py-16 bg-accent">
@@ -521,12 +547,10 @@ export default function MangalService() {
               We are available 24 hours a day, 7 days a week. Call us right now for immediate help and support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+919999999999" className="inline-flex items-center justify-center gap-2 bg-white text-accent font-display font-bold px-10 py-4 text-base sm:text-lg tracking-widest hover:bg-blue-50 transition-all hover:scale-105 shadow-xl rounded-lg">
-                <Phone size={20} /> +91 99999 99999
+              <a href="tel:+918796762902" className="inline-flex items-center justify-center gap-2 bg-white text-accent font-display font-bold px-10 py-4 text-base sm:text-lg tracking-widest hover:bg-blue-50 transition-all hover:scale-105 shadow-xl rounded-lg">
+                <Phone size={20} /> +918796762902
               </a>
-              <a href="tel:+919888888888" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-display font-bold px-10 py-4 text-base sm:text-lg tracking-widest hover:bg-white/10 transition-all rounded-lg">
-                <Phone size={20} /> +91 98888 88888
-              </a>
+              
             </div>
           </AnimatedSection>
         </div>
@@ -629,8 +653,7 @@ export default function MangalService() {
             <div>
               <h4 className="font-display text-white/80 text-xs tracking-widest uppercase mb-4">Quick Contact</h4>
               <ul className="space-y-3 text-white/55 text-sm">
-                <li className="flex gap-2 items-center"><Phone size={14} className="text-white/40 shrink-0" /> +91 99999 99999</li>
-                <li className="flex gap-2 items-center"><Phone size={14} className="text-white/40 shrink-0" /> +91 98888 88888</li>
+                <li className="flex gap-2 items-center"><Phone size={14} className="text-white/40 shrink-0" /> +91 8796762902</li>
                 <li className="flex gap-2 items-center"><Clock size={14} className="text-white/40 shrink-0" /> Available 24/7</li>
                 <li className="flex gap-2 items-center"><MapPin size={14} className="text-white/40 shrink-0" /> Delhi NCR</li>
               </ul>
@@ -646,7 +669,7 @@ export default function MangalService() {
 
       {/* ── FLOATING CALL BUTTON ── */}
       
-      <a  href="tel:+919999999999"
+      <a  href="tel:+918796762902"
         className="floating-call fixed bottom-6 right-6 z-50 bg-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-red-700 hover:scale-110 transition-all"
         title="Call Now" >
         <Phone size={24} />
