@@ -6,6 +6,7 @@ import {
   Wrench, Image, MessageCircle,
 } from "lucide-react";
 import { FaFacebook,FaInstagram, FaYoutube } from "react-icons/fa";
+import WhatsAppIcon from "./Icon";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home", icon: Home },
@@ -674,6 +675,7 @@ export default function MangalService() {
         title="Call Now" >
         <Phone size={24} />
       </a>
+      <WhatsAppIcon/>
     </div>
   );
 }
